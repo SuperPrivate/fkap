@@ -1,0 +1,1 @@
+SQLSTATE[42000] [1044] Access denied for user ''@'localhost' to database 'misterv'
