@@ -1,0 +1,6 @@
+
+
+1.) Accept create user info as $_POST instead of hard-coded variables
+2.) Accept user login info as $_POST instead of hard-coded variables
+3.) Create a login html form.
+
