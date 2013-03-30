@@ -3,4 +3,4 @@
 1.) Accept create user info as $_POST instead of hard-coded variables
 2.) Accept user login info as $_POST instead of hard-coded variables
 3.) Create a login html form.
-
+4.) If the acct has not been activated, it says bad password but it should say 'you need to activate your acct before you can login.'
