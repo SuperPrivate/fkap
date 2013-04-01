@@ -1,2 +1,140 @@
 
 .DS_Store
+
+
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+jquery_misc.js
+
+# OS Command files.
+######################
+.bat
+.cmd
+
+
+# Specific Files
+######################
+*~
+.svn
+.cvs
+.listing
+*.bak
+*.swp
+plugins/wp-file-cache/cache
+cache
+.cache
+temp
+tmp
+*.tmp
+imagecache*
+uploads*
+*_backup
+gt-cache
+ics-importer-cache
+sites/*
+*.sublime-*
+testing/*
+
+
+# wordpress specific
+######################
+wp-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/*
+wp-content/backup-db/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/cache/supercache/*
+wp-config-sample.php
+wp-content/w3tc*
+wp-content/w3-*
+wp-content/plugins/wpengine-snapshot/snapshots/*
+wp-content/uploads/snapshots
+wp-content/themes/thesis*/custom/cache
+wp-content/themes/thesis*/lib/scripts/cache
+wp-content/themes/*/cache
+wp-content/plugins/*/cache
+wp-content/w3tc-bak
+wp-content/backup*
+wp-content/temp*
+wp-content/upgrade/*
+wp-content/uploads/
+wp-content/uploads/*
+wp-content/blogs.dir/*/*
+
+
+# large/disallowed file types
+# a CDN should be used for these
+######################
+*.hqx
+*.bin
+*.deb
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi
+
+################
+ # Directorys #
+################
+test
+testing
