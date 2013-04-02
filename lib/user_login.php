@@ -68,11 +68,6 @@ class User_Login {
 		}  catch(PDOException $e)  {
 
 		}
-
-	}
-	
-	function checkActivated($email){
-		
 	}
 }
 
