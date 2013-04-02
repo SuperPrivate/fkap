@@ -12,7 +12,9 @@ class User_Login {
 		$encrypt_password = new Encrypt_Password();
 		$functions = new PDOFunctions;
 		$db = $functions->createNewPDOConnection($dbcred->dbhost, $dbcred->dbname, $dbcred->dbuser, $dbcred->dbpwd);
-    	$retval = FALSE;
+    	$retval = array();
+	$retval['activated'] = FALSE;
+	$retval['passwordMatch'] = FALSE;
     	$login_array = array();
 
 	    try {
@@ -25,8 +27,11 @@ class User_Login {
 					$login_array[$key] = $value;
 				}
 			}
-
-			if( ! isset($login_array['activated']))	{
+			
+			if(isset($login_array['activated']) && $login_array['activated']==1){
+				$retval['activated'] = TRUE;
+			}
+			else if( ! isset($login_array['activated']))	{
 				return;
 			}	else 	{
 				if(empty($login_array['activated']))	{
@@ -49,9 +54,9 @@ class User_Login {
 			}
 
 			if($enc_password['pwencrypted'] == $login_array['password'])	{
-				$retval = TRUE;
+				$retval['passwordMatch'] = TRUE;
 			}	else 	{
-				$retval = FALSE;
+				$retval['passwordMatch'] = FALSE;
 			}
 
 			/*
@@ -62,8 +67,12 @@ class User_Login {
 	    	return $retval;
 		}  catch(PDOException $e)  {
 
-	}
+		}
 
+	}
+	
+	function checkActivated($email){
+		
 	}
 }
 
