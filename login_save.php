@@ -17,13 +17,25 @@ $login_array = array();
 			break;
 		}
 	}
+	
+	$login_status = $user_login::login($login_array['email'], $login_array['password']);
+	
+	if($login_status['activated']&&$login_status['passwordMatch']){
+		echo "Login Succesful! <br/>";
+	}
+	elseif(!$login_status['passwordMatch']){
+		echo "Passwords do not match. <br/>";
+	}
+	elseif(!$login_status['activated']){
+		echo "Please activate your account. <br/>";
+	}
 
 
-if($user_login::login($login_array['email'], $login_array['password']))	{
-	echo "passwords match <br/>";
-}	else 	{
-	echo "bad passwords <br/>";
-}
+//if($user_login::login($login_array['email'], $login_array['password']))	{
+//	echo "passwords match <br/>";
+//}	else 	{
+//	echo "bad passwords <br/>";
+//}
 
 
 ?>
