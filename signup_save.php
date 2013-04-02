@@ -2,8 +2,10 @@
 
 include_once('lib/user_create.php');
 include_once('lib/encrypt_password.php');
+include_once('lib/user_validate.php');
 $user_create = new User_Create();
 $encrypt_password = new Encrypt_Password;
+$user_validate = new User_Validate;
 
 $signup_array = array();
 
@@ -33,7 +35,7 @@ if( ! $user_create::test_exist_email($signup_array['email']))	{
 				[salt] => $2a$10$SgsJC9ThGIWiEtJoD8lyoh 
 				[pwencrypted] => $2a$10$SgsJC9ThGIWiEtJoD8lyoekkzjROpY9caYYLzNtvRSsSh77O7CwjW )
 	 */
-	foreach($encrypt_password::gen_pass($password) as $key => $value)	{
+	foreach($encrypt_password::gen_pass($signup_array['password']) as $key => $value)	{
 		$signup_array[$key] = $value;
 	}
 
