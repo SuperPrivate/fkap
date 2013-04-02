@@ -1,7 +1,7 @@
 <?php
 
 include_once('lib/user_create.php');
-$user_login = new User_Create();
+$user_create = new User_Create();
 
 $login_array = array();
 
