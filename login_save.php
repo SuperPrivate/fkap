@@ -22,13 +22,13 @@ $login_array = array();
 		}
 	}
 	
+	$login_status = array();
 	$login_status = $user_login::login($login_array['email'], $login_array['password']);
 	
 	if($login_status['activated']&&$login_status['passwordMatch']){
 		echo "Login Succesful! <br/>";
 	}
 	elseif(!$login_status['passwordMatch']){
-		//echo $login_status['passwordMatch'];
 		echo "Passwords do not match. <br/>";
 	}
 	elseif(!$login_status['activated']){
