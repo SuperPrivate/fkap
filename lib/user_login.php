@@ -31,13 +31,13 @@ class User_Login {
 			if(isset($login_array['activated']) && $login_array['activated']==1){
 				$retval['activated'] = TRUE;
 			}
-			else if( ! isset($login_array['activated']))	{
-				return;
-			}	else 	{
-				if(empty($login_array['activated']))	{
-					return;
-				}
-			}
+			//else if( ! isset($login_array['activated']))	{
+			//	return;
+			//}	else 	{
+			//	if(empty($login_array['activated']))	{
+			//		return;
+			//	}
+			//}
 
 			$stmt = $db->prepare("select salt from acl_salt where userid=:userid limit 1");
 			$stmt->bindValue(':userid', $login_array['userid'], PDO::PARAM_STR);
@@ -63,7 +63,6 @@ class User_Login {
 			echo "enc_password['pwencrypted']: " . $enc_password['pwencrypted'] . "<br/>";
 			echo "login_array['password']: " . $login_array['password'] . "<br/>";
 			*/
-		
 	    	return $retval;
 		}  catch(PDOException $e)  {
 
