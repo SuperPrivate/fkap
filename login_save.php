@@ -24,6 +24,7 @@ $login_array = array();
 		echo "Login Succesful! <br/>";
 	}
 	elseif(!$login_status['passwordMatch']){
+		//echo $login_status['passwordMatch'];
 		echo "Passwords do not match. <br/>";
 	}
 	elseif(!$login_status['activated']){
