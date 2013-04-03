@@ -68,11 +68,6 @@ class User_Validate {
 			If you did not set the smtp session to TRUE then you don't have an SMTP
 			server so return from this function because it will not do anything but error.
 		 */
-		if($_SESSION['smtp'])	{
-			return TRUE;
-		}	else 	{
-			return FALSE;
-		}
 
 		$retval = FALSE;
 		$dbcred = new Dbcred();

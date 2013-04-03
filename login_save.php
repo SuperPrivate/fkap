@@ -1,4 +1,8 @@
 <?php
+@$sid = session_id();
+if( ! $sid) {
+	session_start();
+}
 
 include_once('lib/user_login.php');
 $user_login = new User_Login();

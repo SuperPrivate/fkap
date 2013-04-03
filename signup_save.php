@@ -1,4 +1,9 @@
 <?php
+@$sid = session_id();
+if( ! $sid) {
+	session_start();
+}
+$_SESSION['smtp'] = FALSE;
 
 include_once('lib/user_create.php');
 include_once('lib/encrypt_password.php');
@@ -77,10 +82,12 @@ if( ! $user_create::test_exist_email($signup_array['email']))	{
 	/*
 		4.) Send the validation email to the new user.
 	 */
-	if($user_validate::email_activation_key($signup_array['email'], $signup_array['validation_key']))	{
-		echo 'An activation email was sent to ' . $signup_array['email'] . "<br/>";
-	}	else 	{
-		echo "This host is not SMTP capable so no activation email will be sent. <br/>";
+	if($_SESSION['smtp'])	{
+		if($user_validate::email_activation_key($signup_array['email'], $signup_array['validation_key']))	{
+			echo 'An activation email was sent to ' . $signup_array['email'] . "<br/>";
+		}	else 	{
+			echo "This host is not SMTP capable so no activation email will be sent. <br/>";
+		}
 	}
 
 }
