@@ -29,7 +29,7 @@ $encrypt_password = new Encrypt_Password();
 $user_validate = new User_Validate();
 $pw_array = array();
 
-$email = 'davet6020@gmail.com';
+$email = 'email@example.com';
 $password = 'thepasswd';
 
 /*
